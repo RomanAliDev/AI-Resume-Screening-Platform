@@ -1,11 +1,11 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-
+from fastapi import HTTPException
 from app.core.config import settings
 from app.schemas.candidate_match import CandidateMatchAIResult
 
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3.5-flash",
     google_api_key=settings.google_api_key,
     temperature=0,
 )
@@ -43,7 +43,25 @@ Return:
 
 Do not invent candidate information.
 """
+    try:
+        result = structured_llm.invoke(prompt)
 
-    result = structured_llm.invoke(prompt)
+        return result
+    except Exception as e:
+        error_message = str(e).lower()
 
-    return result
+        if (
+            "quota" in error_message
+            or "rate limit" in error_message
+            or "429" in error_message
+            or "resource exhausted" in error_message
+        ):
+            raise HTTPException(
+                status_code=429,
+                detail="AI service limit reached. Please try again later.",
+            )
+
+        raise HTTPException(
+            status_code=503,
+            detail="AI service is temporarily unavailable. Please try again.",
+        )

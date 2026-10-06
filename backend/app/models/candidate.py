@@ -56,3 +56,9 @@ class Candidate(Base):
         default=datetime.utcnow,
         nullable=False,
     )
+
+    review_status: Mapped[str] = mapped_column(
+        String(50),
+        default="UNDER_REVIEW",
+        nullable=False,
+    )

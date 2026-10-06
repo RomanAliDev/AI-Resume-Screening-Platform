@@ -12,7 +12,7 @@ class ResumeResponse(BaseModel):
     status: str
     uploaded_by: int
     uploaded_at: datetime
-
+    candidate_id: int | None = None
     model_config = ConfigDict(
         from_attributes=True
     )

@@ -14,7 +14,7 @@ from app.core.security import (
 
 
 router = APIRouter(
-    prefix="/auth",
+    prefix="/api/v1/auth",
     tags=["Authentication"],
 )
 
@@ -97,8 +97,9 @@ def login(
         "token_type": "bearer",
     }
 
+
 @router.get("/me")
-def get_me(
+def get_current_user_info(
     current_user: User = Depends(get_current_user),
 ):
     return {
@@ -107,3 +108,4 @@ def get_me(
         "email": current_user.email,
         "role": current_user.role,
     }
+

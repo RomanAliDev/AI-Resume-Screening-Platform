@@ -19,3 +19,4 @@ class CandidateMatchResponse(BaseModel):
     missing_skills: str | None = None
     explanation: str | None = None
     created_at: datetime
+

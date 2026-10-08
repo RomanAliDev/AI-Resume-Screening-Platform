@@ -20,5 +20,3 @@ Database: PostgreSQL
 AI: Google Gemini, LangChain  
 Authentication: JWT
 
-## Project Structure
-

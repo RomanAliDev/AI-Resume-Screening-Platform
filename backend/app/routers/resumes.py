@@ -139,7 +139,6 @@ def upload_resume(
     db.commit()
     db.refresh(candidate)
 
-    print("CANDIDATE CREATED:", candidate.id)
 
     # AI candidate-job matching
     ai_match_result = match_candidate(
@@ -163,13 +162,6 @@ def upload_resume(
     db.add(candidate_match)
     db.commit()
     db.refresh(candidate_match)
-
-    print(
-        "AI MATCH CREATED:",
-        candidate_match.id,
-        "Score:",
-        candidate_match.match_score,
-    )
 
     return resume
 

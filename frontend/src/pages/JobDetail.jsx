@@ -150,7 +150,7 @@ function JobDetails() {
       <div className="p-4 sm:p-6 lg:p-8">
         <button
           onClick={() => navigate("/jobs")}
-          className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-slate-900">
+          className="mb-6 flex cursor-pointer items-center gap-2 text-sm font-medium text-slate-600 transition hover:text-slate-900">
           <ArrowLeft size={18} />
           Back to Jobs
         </button>

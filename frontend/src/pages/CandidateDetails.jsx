@@ -108,7 +108,7 @@ function CandidateDetails() {
         <div className="p-4 sm:p-6 lg:p-8">
           <button
             onClick={() => navigate("/candidates")}
-            className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900">
+            className="mb-6 cursor-pointer flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900">
             <ArrowLeft size={17} />
             Back to Candidates
           </button>
@@ -131,7 +131,7 @@ function CandidateDetails() {
         {/* Back */}
         <button
           onClick={() => navigate("/candidates")}
-          className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900">
+          className="mb-6 cursor-pointer flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900">
           <ArrowLeft size={17} />
           Back to Candidates
         </button>
@@ -299,7 +299,7 @@ function CandidateDetails() {
               </p>
             </div>
           ) : (
-            <div className="divide-y divide-slate-100">
+            <div className="divide-y divide-slate-600">
               {candidate.matches.map((match) => (
                 <div key={match.id} className="p-5">
                   {/* Match Score */}

@@ -50,7 +50,7 @@ function CreateJob() {
         <div className="mb-8">
           <button
             onClick={() => navigate("/jobs")}
-            className="mb-5 flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900">
+            className="mb-5 flex items-center cursor-pointer gap-2 text-sm font-medium text-slate-500 transition hover:text-slate-900">
             <ArrowLeft size={17} />
             Back to Jobs
           </button>

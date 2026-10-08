@@ -46,7 +46,7 @@ function Sidebar({ isOpen, onClose }) {
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 border-r border-slate-200 bg-white transition-transform duration-300 lg:static lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 border-r border-slate-200 bg-white transition-transform duration-300  lg:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}>
         <div className="flex h-16 items-center justify-between border-b border-slate-200 px-5">

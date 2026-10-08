@@ -34,25 +34,25 @@ function Candidates() {
     }
   };
 
-  const filteredCandidates = useMemo(() => {
-    const searchValue = search.trim().toLowerCase();
+  const filteredCandidates = candidates.filter((candidate) => {
+    const value = search.toLowerCase().trim();
 
-    if (!searchValue) {
-      return candidates;
+    if (!value) {
+      return true;
     }
 
-    return candidates.filter((candidate) => {
-      const name = candidate.name?.toLowerCase() || "";
-      const email = candidate.email?.toLowerCase() || "";
-      const skills = candidate.skills?.toLowerCase() || "";
-
-      return (
-        name.includes(searchValue) ||
-        email.includes(searchValue) ||
-        skills.includes(searchValue)
-      );
-    });
-  }, [candidates, search]);
+    return (
+      String(candidate.name || "")
+        .toLowerCase()
+        .startsWith(value) ||
+      String(candidate.email || "")
+        .toLowerCase()
+        .startsWith(value) ||
+      String(candidate.skills || "")
+        .toLowerCase()
+        .startsWith(value)
+    );
+  });
 
   const getStatusStyle = (status) => {
     if (status === "SHORTLISTED") {

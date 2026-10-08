@@ -68,7 +68,7 @@ function Header({ onMenuClick }) {
       </div>
 
       <div className="flex items-center gap-3">
-        <button className="relative rounded-lg p-2 text-slate-500 hover:bg-slate-100">
+        <button className="relative rounded-lg p-2 cursor-pointer text-slate-500 hover:bg-slate-100">
           <Bell size={20} />
 
           <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-blue-600" />

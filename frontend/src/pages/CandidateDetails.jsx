@@ -299,7 +299,7 @@ function CandidateDetails() {
               </p>
             </div>
           ) : (
-            <div className="divide-y divide-slate-600">
+            <div className="divide-y divide-slate-100">
               {candidate.matches.map((match) => (
                 <div key={match.id} className="p-5">
                   {/* Match Score */}

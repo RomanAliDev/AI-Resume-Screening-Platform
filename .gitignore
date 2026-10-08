@@ -4,6 +4,8 @@ venv/
 
 # Environment variables
 .env
+.env.local
+.env.*.local
 
 # Python cache
 __pycache__/
@@ -11,6 +13,13 @@ __pycache__/
 
 # Uploaded resumes
 uploads/
+
+# Frontend dependencies
+node_modules/
+
+# Frontend build
+dist/
+build/
 
 # IDE
 .vscode/
